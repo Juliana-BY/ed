@@ -71,11 +71,11 @@ int main() {
         float meio1 = novo[n / 2 - 1];
         float meio2 = novo[n / 2];
         med = (meio1+meio2)/2;
-        printf("Mediana: %.2f", med); //MEDIANA se n par
+        printf("Mediana: %.2f\n", med); //MEDIANA se n par
     } 
     else {
         med = novo[n/2];
-        printf("Mediana: %.2f\n\n", med); //MEDIANA se n ímpar
+        printf("Mediana: %.2f\n", med); //MEDIANA se n ímpar
     } 
     return 0;
 }
