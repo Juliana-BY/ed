@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+    <title>Page Title</title>
+    <style>
+        table.hidden {
+            display: none;
+        }
+    </style>
+    </head>
+</head>
+<body>
+
+<table class = "hidden">
+    <tr>
+        <th>UC</th>
+        <th>Carga Total</th>
+        <th>Pode Faltar (h)</th>
+    </tr>
+</table>
+
+
+<p style= "font-family: cinzel; font-size: 250%"> Consultor de carga horária das tecnologias em saúde <img align= "left" width="326" height="196" src ="https://www.unifesp.br/reitoria/dci/images/docs/manual_da_marca/Unifesp_completa_policromia_RGB.png" style= "border-right: 40px  solid white" > </p> 
+ <div class = "container">
+    <div class="f-group">
+        <label for="">Curso</label>
+        <select name="sel1" id="sel1" onchange="popular('sel1', 'sel2')">
+            <option value=" -- selecione o curso -- "></option>
+            <option value="info">Informática em Saúde</option>
+            <option value="oft">Oftálmica</option>
+            <option value="rad">Radiologia</option>
+        </select>
+    </div>
+
+    <div class="f-group">
+        <label for="">Termo</label>
+        <select name="sel2" id="sel2"></select>
+    </div>
+
+</div>
+
+<!-- passar para outro arq -->
+<script>
+    function popular(s1, s2) {
+        var s1 = document.getElementById(s1);
+        var s2 = document.getElementById(s2);
+
+        s2.innerHTML = "";
+        if(s1.value=="info"){
+            var opcoes = ['info1|1° termo','info2|2° termo','info3|3° termo','info4|4° termo','info5|5° termo','info6|6° termo'];
+        
+            for (var i = 0; i < opcoes.length; i++) {
+                    var partes = opcoes[i].split('|');
+                    var option = document.createElement("option");
+                    option.value = partes[0];
+                    option.text = partes[1];
+                    s2.appendChild(option);
+                }
+            if (s2.value == "info1") {
+                info1Table.style.display = "block";  
+            }
+        }
+
+        else if(s1.value=="oft"){
+            var opcoes = ['oft1|1° termo','oft2|2° termo','oft3|3° termo','oft4|4° termo','oft5|5° termo','oft6|6° termo'];
+        
+            for (var i = 0; i < opcoes.length; i++) {
+                    var partes = opcoes[i].split('|');
+                    var option = document.createElement("option");
+                    option.value = partes[0];
+                    option.text = partes[1];
+                    s2.appendChild(option);
+                }
+        }
+        
+        else if(s1.value=="rad"){
+            var opcoes = ['rad1|1° termo','rad2|2° termo','rad3|3° termo','rad4|4° termo','rad5|5° termo','rad6|6° termo'];
+        
+            for (var i = 0; i < opcoes.length; i++) {
+                    var partes = opcoes[i].split('|');
+                    var option = document.createElement("option");
+                    option.value = partes[0];
+                    option.text = partes[1];
+                    s2.appendChild(option);
+                }
+        }
+    
+    }
+</script>
+
+</body>
+</html>
