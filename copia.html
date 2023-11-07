@@ -1,12 +1,12 @@
+<!DOCTYPE html>
 <html>
 <head> 
     <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
     <title>Page Title</title>
-    </head>
 </head>
 <body>
 
-<p style= "font-family: cinzel; font-size: 250%"> Consultor de carga horária das tecnologias em saúde <img align= "left" width="326" height="196" src ="https://www.unifesp.br/reitoria/dci/images/docs/manual_da_marca/Unifesp_completa_policromia_RGB.png" style= "border-right: 40px  solid white" > </p> 
+<p style= "font-family: Cinzel; font-size: 250%"> Consultor de carga horária das tecnologias em saúde <img align= "left" width="326" height="196" src ="https://www.unifesp.br/reitoria/dci/images/docs/manual_da_marca/Unifesp_completa_policromia_RGB.png" style= "border-right: 40px  solid white" > </p> 
  <div class = "container">
     <div class="f-group">
         <label for="">Curso</label>
@@ -20,12 +20,7 @@
 
     <div class="f-group">
         <label for="">Termo</label>
-        <select name="sel2" id="sel2" onchange="esconderTabela()">
-            <option value="">-- selecione o termo --</option>
-            <option value="info1">1º termo</option>
-            <option value="info2">2º termo</option>
-            <option value="info3">3º termo</option>
-        </select>
+        <select name="sel2" id="sel2" onchange="esconderTabela()"></select>
     </div>
 
     <!-- INICIO TABELAS INFO -->
@@ -252,7 +247,6 @@
             </tr>            
         </table>
     </div>
-    <!-- FIM TABELAS INFO -->
 
     <!-- INICIO TABELAS OFT -->
     <div class="f-group">
@@ -569,7 +563,6 @@
             </tr>
         </table>
     </div>
-    <!-- FIM TABELAS OFT -->
 
     <!-- INICIO TABELAS RAD -->
     <div class="f-group">
@@ -841,9 +834,6 @@
             </tr>
         </table>
     </div>
-
-    <!-- FIM TABELAS RAD -->
-
 </div>
 
 <script>
@@ -940,13 +930,30 @@
                     option.text = partes[1];
                     s2.appendChild(option);
                 }
+            if (s2.value == "rad1") {
+                rad1Tabela.style.display = "block";  
+            }
+            else if (s2.value == "rad2") {
+                rad2Tabela.style.display = "block";  
+            }
+            else if (s2.value == "rad3") {
+                rad3Tabela.style.display = "block";  
+            }
+            else if (s2.value == "rad4") {
+                rad4Tabela.style.display = "block";  
+            }
+            else if (s2.value == "rad5") {
+                rad5Tabela.style.display = "block";  
+            }
+            else if (s2.value == "rad6") {
+                rad6Tabela.style.display = "block";  
+            }
         }
     
     }
 
     function esconderTabela() {
-        var selectedValue1 = document.getElementById("sel1").value; 
-        var selectedValue2 = document.getElementById("sel2").value;
+        var selectedValue = document.getElementById("sel2").value;
         var info1Tabela = document.getElementById("info1-tabela");
         var info2Tabela = document.getElementById("info2-tabela");
         var info3Tabela = document.getElementById("info3-tabela");
@@ -972,74 +979,75 @@
         info4Tabela.style.display = "none";
         info5Tabela.style.display = "none";
         info6Tabela.style.display = "none";
-        oft1Tabela.style.display = "none"; 
+        oft1Tabela.style.display = "none";
         oft2Tabela.style.display = "none";
-        oft3Tabela.style.display = "none"; 
-        oft4Tabela.style.display = "none"; 
-        oft5Tabela.style.display = "none"; 
-        oft6Tabela.style.display = "none"; 
+        oft3Tabela.style.display = "none";
+        oft4Tabela.style.display = "none";
+        oft5Tabela.style.display = "none";
+        oft6Tabela.style.display = "none";
         rad1Tabela.style.display = "none";
-        rad2Tabela.style.display = "none"; 
-        rad3Tabela.style.display = "none"; 
-        rad4Tabela.style.display = "none"; 
-        rad5Tabela.style.display = "none"; 
+        rad2Tabela.style.display = "none";
+        rad3Tabela.style.display = "none";
+        rad4Tabela.style.display = "none";
+        rad5Tabela.style.display = "none";
         rad6Tabela.style.display = "none";
 
-        if (selectedValue1 === "info" && selectedValue2 === "1") {
-            document.getElementById("info1-tabela").style.display = "block";
+        if (selectedValue === "info1") {
+            info1Tabela.style.display = "block";
         } 
-        else if (selectedValue1 === "info" && selectedValue2 === "2") {
-            document.getElementById("info2-tabela").style.display = "block";
+        else if (selectedValue === "info2") {
+            info2Tabela.style.display = "block";
+        }
+        else if (selectedValue === "info3") {
+            info3Tabela.style.display = "block";
+        }
+        else if (selectedValue === "info4") {
+            info4Tabela.style.display = "block";
+        }
+        else if (selectedValue === "info5") {
+            info5Tabela.style.display = "block";
+        }
+        else if (selectedValue === "info6") {
+            info6Tabela.style.display = "block";
+        }
+        else if (selectedValue === "oft1") {
+            oft1Tabela.style.display = "block";
         } 
-        else if (selectedValue1 === "info" && selectedValue2 === "3") {
-            document.getElementById("info3-tabela").style.display = "block";
+        else if (selectedValue === "oft2") {
+            oft2Tabela.style.display = "block";
+        }
+        else if (selectedValue === "oft3") {
+            oft3Tabela.style.display = "block";
+        }
+        else if (selectedValue === "oft4") {
+            oft4Tabela.style.display = "block";
+        }
+        else if (selectedValue === "oft5") {
+            oft5Tabela.style.display = "block";
+        }
+        else if (selectedValue === "oft6") {
+            oft6Tabela.style.display = "block";
+        }
+        else if (selectedValue === "rad1") {
+            rad1Tabela.style.display = "block";
         } 
-        else if (selectedValue1 === "info" && selectedValue2 === "4") {
-            document.getElementById("info4-tabela").style.display = "block";
-        } 
-        else if (selectedValue1 === "info" && selectedValue2 === "5") {
-            document.getElementById("info5-tabela").style.display = "block";
-        } 
-        else if (selectedValue1 === "info" && selectedValue2 === "6") {
-            document.getElementById("info6-tabela").style.display = "block";
-        } 
-        else if (selectedValue1 === "oft" && selectedValue2 === "1") {
-            document.getElementById("oft1-tabela").style.display = "block";
-        }    
-        else if (selectedValue1 === "oft" && selectedValue2 === "2") {
-            document.getElementById("oft2-tabela").style.display = "block";
-        } 
-        else if (selectedValue1 === "oft" && selectedValue2 === "3") {
-            document.getElementById("oft3-tabela").style.display = "block";
-        } 
-        else if (selectedValue1 === "oft" && selectedValue2 === "4") {
-            document.getElementById("oft4-tabela").style.display = "block";
+        else if (selectedValue === "rad2") {
+            rad2Tabela.style.display = "block";
         }
-        else if (selectedValue1 === "oft" && selectedValue2 === "5") {
-            document.getElementById("oft5-tabela").style.display = "block";
+        else if (selectedValue === "rad3") {
+            rad3Tabela.style.display = "block";
         }
-        else if (selectedValue1 === "oft" && selectedValue2 === "6") {
-            document.getElementById("oft6-tabela").style.display = "block";
+        else if (selectedValue === "rad4") {
+            rad4Tabela.style.display = "block";
         }
-        else if (selectedValue1 === "rad" && selectedValue2 === "1") {
-            document.getElementById("rad1-tabela").style.display = "block";
+        else if (selectedValue === "rad5") {
+            rad5Tabela.style.display = "block";
         }
-        else if (selectedValue1 === "rad" && selectedValue2 === "2") {
-            document.getElementById("rad2-tabela").style.display = "block";
+        else if (selectedValue === "rad6") {
+            rad6Tabela.style.display = "block";
         }
-        else if (selectedValue1 === "rad" && selectedValue2 === "3") {
-            document.getElementById("rad3-tabela").style.display = "block";
-        }
-        else if (selectedValue1 === "rad" && selectedValue2 === "4") {
-            document.getElementById("rad4-tabela").style.display = "block";
-        }
-        else if (selectedValue1 === "rad" && selectedValue2 === "5") {
-            document.getElementById("rad5-tabela").style.display = "block";
-        }
-        else if (selectedValue1 === "rad" && selectedValue2 === "6") {
-            document.getElementById("rad6-tabela").style.display = "block";
-        }
-    }   
+        
+    }
 
 </script>
 
