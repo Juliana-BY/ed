@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+    <title>Consultor de Carga Horária TS</title>
+    <link rel="icon" type="image/x-icon" href="https://moodlegrad.unifesp.br/pluginfile.php/1/theme_moove/favicon/1679397823/transferir.ico">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header> 
+    <img align= "left" width="288,6" height="120,6" src ="https://www.unifesp.br/images/logos_unifesp/Unifesp-marca.png" style= "border-right: 40px  solid #1e5a36  " >
+    <p id="titulo">Consultor de carga horária das tecnologias em saúde</p> 
+</header>
+
+<div class = "container">
+    <div class="op">
+        <div class="f-group">
+            <label for="">Curso</label>
+            <select name="sel1" id="sel1" onclick="esconderTabela()" onchange="popular('sel1', 'sel2')">
+                <option value=""></option>
+                <option value="info">Informática em Saúde</option>
+                <option value="oft">Oftálmica Integral</option>
+                <option value="oftm">Oftálmica Matutino</option>
+                <option value="rad">Radiologia</option>
+            </select>
+        </div>
+
+        <div class="f-group">
+            <label for="">Termo</label>
+            <select name="sel2" id="sel2" onchange="esconderTabela()"></select>
+        </div>
+    </div>
+<br>
+<br>
+
+    <!-- INICIO TABELAS INFO -->
+    <div class="f-group">
+        <table id="info1-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+              </tr>
+              <tr>
+                <td>informática aplicada à saúde</td>
+                <td>40h</td>
+                <td>10h</td>
+              </tr>
+              <tr>
+                <td>anatomia</td>
+                <td>80h</td>
+                <td>20h</td>
+            </tr>
+            <tr>
+                <td>fundamentos de matemática e cálculo</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>
+                <td>química geral e orgânica</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>
+                <td>algoritmos e programação de computadores</td>
+                <td>80h</td>
+                <td>20h</td>
+            </tr>
+            <tr>
+                <td>histologia e biologia estrutural</td>
+                <td>50h</td>
+                <td>12,5h</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="f-group">
+        <table id="info2-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>genética</td>
+                <td>44h</td>
+                <td>11h</td>
+            </tr>
+            <tr>
+                <td>programação orientada à objetos</td>
+                <td>72h</td>
+                <td>18h</td>
+            </tr>
+            <tr>		
+                <td>fundamentos de saúde pública</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>
+                <td>estrutura de dados</td>
+                <td>72h</td>
+                <td>18h</td>
+            </tr>
+            <tr>
+                <td>estatística</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>
+                <td>desenvolvimento e avaliação de tecnologias em saúde</td>
+                <td>50h</td>
+                <td>12,5h</td>
+            </tr>
+            <tr>
+                <td>sistema de informação em saúde</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>            
+        </table>
+    </div>
+
+
+    <div class="f-group">
+        <table id="info3-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>bioquímica</td>
+                <td>48h</td>
+                <td>12h</td>
+            </tr>	
+            <tr>	
+                <td>sistemas operacionais e redes</td>
+                <td>80h</td>
+                <td>20h</td>
+            </tr>	
+            <tr>
+                <td>biofísica</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>	
+                <td>banco de dados</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>	
+                <td>informação na gestão de sistemas de saúde</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>
+                <td>inteligência artificial aplicada à saúde</td>
+                <td>80h</td>
+                <td>20h</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="info4-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>microbiologia, micologia, parasitologia e imunologia</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>
+            <tr>	
+                <td>fisiologia</td>
+                <td>90h</td>
+                <td>22,5h</td>
+            </tr>
+            <tr>	
+                <td>farmacologia</td>
+                <td>54h</td>
+                <td>13,5h</td>
+            </tr>
+            <tr>	
+                <td>bioinformática</td>
+                <td>80h</td>
+                <td>20h</td>
+            </tr>
+            <tr>	
+                <td>informação na gestão de serviços de saúde</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="f-group">
+        <table id="info5-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>ciências de dados em saúde</td>
+                <td>80h</td>
+                <td>20h</td>
+            </tr>
+            <tr>	
+                <td>ciências humanas e sociais aplicadas à saúde</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>	
+                <td>saúde ocupacional e biossegurança</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>metodologia científica</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>bioética</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>processamento de sinais biológicos e imagens</td>
+                <td>80h</td>
+                <td>20h</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="f-group">
+        <table id="info6-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>trabalho de conclusão de curso</td>
+                <td>240h</td>
+                <td>60h</td>
+            </tr>
+            <tr>	
+                <td>projeto integrador de desenvolvimento de sistemas aplicados à saúde</td>
+                <td>120h</td>
+                <td>30h</td>
+            </tr>            
+        </table>
+    </div>
+
+    <!-- INICIO TABELAS OFT -->
+    <div class="f-group">
+        <table id="oft1-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>ciências humanas e sociais aplicadas à saúde</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>	
+                <td>fundamentos de matemática e cálculo</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>	
+                <td>bioética</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>biofísica</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>	
+                <td>observação da prática tecnológica</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>	
+                <td>saúde ocupacional e biossegurança</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>histologia e biologia estrutural</td>
+                <td>50h</td>
+                <td>12,5h</td>
+            </tr>
+            <tr>	
+                <td>química geral e orgânica</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>	
+                <td>psicologia e relacionamento humano</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>bioquímica</td>
+                <td>48h</td>
+                <td>12h</td>
+            </tr>
+            <tr>	
+                <td>informática aplicada à saúde</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>	
+                <td>anatomia</td>
+                <td>80h</td>
+                <td>20h</td>
+            </tr>            
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="oft2-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>princípios da formação das imagens</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>	
+                <td>fundamentos de saúde pública</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>física do corpo humano</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>	
+                <td>estatística</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>	
+                <td>desenvolvimento e avaliação de tecnologias em saúde</td>
+                <td>50h</td>
+                <td>12,5h</td>
+            </tr>
+            <tr>	
+                <td>administração e fundamentos de gestão em saúde</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>metodologia científica</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>microbiologia, micologia, parasitologia e imunologia</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>
+            <tr>	
+                <td>genética</td>
+                <td>44h</td>
+                <td>11h</td>
+            </tr>
+            <tr>	
+                <td>fisiologia</td>
+                <td>90h</td>
+                <td>22,5h</td>
+            </tr>
+            <tr>	
+                <td>farmacologia</td>
+                <td>54h</td>
+                <td>13,5h</td>
+            </tr>
+            <tr>	
+                <td>biologia do desenvolvimento</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="oft3-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>óptica fisiológica</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>aproximação à prática tecnológica</td>
+                <td>140h</td>
+                <td>35h</td>
+            </tr>
+            <tr>	
+                <td>bases da tecnologia oftálmica</td>
+                <td>80h</td>
+                <td>20h</td>
+            </tr>
+            <tr>	
+                <td>fisiologia especializada</td>
+                <td>50h</td>
+                <td>12,5h</td>
+            </tr>
+            <tr>	
+                <td>motilidade extrínseca ocular</td>
+                <td>50h</td>
+                <td>12,5h</td>
+            </tr>
+            <tr>	
+                <td>instrumentação cirúrgica oftalmológica</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>doenças oculares e neuroftalmológicas</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="oft4-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>reabilitação visual I: baixa visão e lente de contato</td>
+                <td>48h</td>
+                <td>12h</td>
+            </tr>
+            <tr>	
+                <td>pré-consulta em oftalmologia</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>	
+                <td>motilidade extrínseca ocular aplicada I</td>
+                <td>48h</td>
+                <td>12h</td>
+            </tr>
+            <tr>	
+                <td>instrumentação cirúrgica oftalmológica aplicada I</td>
+                <td>48h</td>
+                <td>12h</td>
+            </tr>
+            <tr>	
+                <td>exames subsidiários em retina I</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>	
+                <td>exames subsidiários em glaucoma e neuroftalmologia I</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>
+            <tr>	
+                <td>exames subsidiários em doenças externas oculares I</td>
+                <td>48h</td>
+                <td>12h</td>
+            </tr>
+            <tr>	
+                <td>atualização continuada em tecnologia oftálmica I</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>exames subsidiários em óptica cirúrgica I</td>
+                <td>64h</td>
+                <td>16h</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="oft5-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>ambulatórios especializados</td> 
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>	
+                <td>atualização continuada em tecnologia oftálmica II</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>exames subsidiários em óptica cirúrgica II</td>
+                <td>72h</td>
+                <td>18h</td>
+            </tr>
+            <tr>	
+                <td>exames subsidiários em doenças externas oculares II</td>
+                <td>48h</td>
+                <td>12h</td>
+            </tr>
+            <tr>	
+                <td>exames subsidiários em glaucoma e neuroftalmologia II</td>
+                <td>64h</td>
+                <td>16h</td>
+            </tr>
+            <tr>	
+                <td>exames subsidiários em retina II</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>
+            <tr>	
+                <td>instrumentação cirúrgica oftalmológica aplicada II</td>
+                <td>48h</td>
+                <td>12h</td>
+            </tr>
+            <tr>	
+                <td>motilidade extrínseca ocular aplicada II</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>
+            <tr>	
+                <td>reabilitação visual II: baixa visão e lente de contato</td> 
+                <td>56h</td>
+                <td>14h</td>
+            </tr>
+            <tr>	
+                <td>ultrassonografia ocular</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="oft6-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>trabalho de produção intelectual</td>
+                <td>680h</td>
+                <td>170h</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- INICIO TABELAS OFTM -->
+    <div class="f-group">
+        <table id="oftm1-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr> 
+                <td>observação da prática tecnológica I</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>			
+            <tr>			
+                <td>fundamentos de matemática e estatística</td>
+                <td>74h</td>
+                <td>18,5h</td>
+            </tr>			
+            <tr>			
+                <td>química geral I</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>			
+            <tr>			
+                <td>história da ciência e da tecnologia</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>			
+            <tr>			
+                <td>histologia e biologia estrutural</td>
+                <td>50h</td>
+                <td>12,5h</td>
+            </tr>			
+            <tr>			
+                <td>biologia do desenvolvimento</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>			
+            <tr>			
+                <td>bioética</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>			
+            <tr>			
+                <td>anatomia</td>
+                <td>100h</td>
+                <td>25h</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="oftm2-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr> 
+                <td>microbiologia, micologia, parasitologia e imunologia</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>			
+            <tr>			
+                <td>informática aplicada à saúde</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>			
+            <tr>			
+                <td>genética</td>
+                <td>44h</td>
+                <td>11h</td>
+            </tr>			
+            <tr>			
+                <td>bioquímica</td>
+                <td>54h</td>
+                <td>13,5h</td>
+            </tr>			
+            <tr>			
+                <td>química geral II</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>			
+            <tr>			
+                <td>física experimental I</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>			
+            <tr>			
+                <td>física básica I (mecânica)</td>
+                <td>72h</td>
+                <td>18h</td>
+            </tr>			
+            <tr>			
+                <td>cálculo I</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>	
+            <tr>			
+                <td>biofísica</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>			
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="oftm3-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr> 
+                <td>física experimental II</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>			
+            <tr>			
+                <td>imageologia aplicada à saúde</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>			
+            <tr>			
+                <td>farmacologia</td>
+                <td>54h</td>
+                <td>13,5h</td>
+            </tr>			
+            <tr>			
+                <td>psicologia e relacionamento humano</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>			
+            <tr>			
+                <td>ciências humanas e sociais aplicadas à saúde</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>			
+            <tr>			
+                <td>metodologia científica</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>			
+            <tr>			
+                <td>cálculo II</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>			
+            <tr>			
+                <td>física básica II (termodinâmica e eletromagnetismo)</td>
+                <td>72h</td>
+                <td>18h</td>
+            </tr>	
+            <tr>			
+                <td>fisiologia</td>
+                <td>90h</td>
+                <td>22,5h</td>
+            </tr>			
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="oftm4-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr> 
+                <td>saúde ocupacional e biossegurança</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>			
+            <tr>			
+                <td>pesquisa clínica</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>			
+            <tr>			
+                <td>saúde pública e privada, normatização e vigilância sanitária</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>			
+            <tr>			
+                <td>empreendedorismo</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>			
+            <tr>			
+                <td>gestão da manutenção</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>			
+            <tr>			
+                <td>observação da prática tecnológica II</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>			
+            <tr>			
+                <td>direito do trabalho</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>			
+            <tr>			
+                <td>avaliação de tecnologias em saúde</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>	
+            <tr>			
+                <td>administração e gestão de pessoas - fundamentos de gestão em saúde</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>	
+            <tr>			
+                <td>física básica III (ótica e física moderna)</td>
+                <td>74h</td>
+                <td>18,5h</td>
+            </tr>		
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="oftm5-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr> 
+                <td>bases da tecnologia oftálmica</td>
+                <td>97h</td>
+                <td>24,25h</td>
+            </tr>			
+            <tr>			
+                <td>instrumentação cirúrgica oftalmológica I</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>			
+            <tr>			
+                <td>motilidade extrínseca ocular I</td>
+                <td>50h</td>
+                <td>12,5h</td>
+            </tr>			
+            <tr>			
+                <td>fisiologia especializada</td>
+                <td>66h</td>
+                <td>16,5h</td>
+            </tr>			
+            <tr>			
+                <td>óptica fisiológica</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>			
+            <tr>			
+                <td>doenças oculares</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>			
+            <tr>			
+                <td>fundamentos neuroftalmológicos</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>				
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="oftm6-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr> 
+                <td>pré consulta</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>			
+            <tr>			
+                <td>visão subnormal</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>			
+            <tr>			
+                <td>lente de contato</td>
+                <td>37h</td>
+                <td>9,25h</td>
+            </tr>			
+            <tr>			
+                <td>motilidade extrínseca ocular II</td>
+                <td>140h</td>
+                <td>35h</td>
+            </tr>			
+            <tr>			
+                <td>biometria</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>			
+            <tr>			
+                <td>perimetria</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>			
+            <tr>			
+                <td>instrumentação cirúrgica e oftalmológica II</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>				
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="oftm7-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr> 
+                <td>exames subsidiários em cirurgia refrativa</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>			
+            <tr>			
+                <td>exames subsidiários em retina</td>
+                <td>90h</td>
+                <td>22,5h</td>
+            </tr>			
+            <tr>			
+                <td>instrumentação cirúrgica e oftalmológica III</td>
+                <td>56h</td>
+                <td>14h</td>
+            </tr>			
+            <tr>			
+                <td>ultrassonografia ocular</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>			
+            <tr>			
+                <td>exames subsidiários em glaucoma</td>
+                <td>72h</td>
+                <td>18h</td>
+            </tr>			
+            <tr>			
+                <td>exames subsidiários em córnea</td>
+                <td>46h</td>
+                <td>11,5h</td>
+            </tr>			
+            <tr>			
+                <td>motilidade extrínseca ocular III</td>
+                <td>200h</td>
+                <td>50sh</td>
+            </tr>				
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="oftm8-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr> 
+                <td>trabalho de produção intelectual</td>
+                <td>450h</td>
+                <td>112,5h</td>
+            </tr>						
+        </table>
+    </div>
+
+    <!-- INICIO TABELAS RAD -->
+    <div class="f-group">
+        <table id="rad1-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>saúde ocupacional e biossegurança</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>
+                <td>anatomia</td>
+                <td>100h</td>
+                <td>25h</td>
+            </tr>
+            <tr>	
+                <td>informática aplicada á saúde</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>desenvolvimento e avaliação de tecnologias em saúde</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>saúde coletiva e sociedade</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>bioética</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>prática tecnológica e atendimento humanizado</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>fundamentos de química e bioquímica básica</td>
+                <td>44h</td>
+                <td>11h</td>
+            </tr>
+            <tr>	
+                <td>histologia e biologia estrutural</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>	
+                <td>microbiologia, micologia, parasitologia e imunologia</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>            
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="rad2-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>introdução a ciências radiológicas</td>
+                <td>110h</td>
+                <td>27,5h</td>
+            </tr>
+            <tr>	
+                <td>patologia</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>	
+                <td>registro e impressão 3D</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>meios de contrastes e princípios farmacológicos</td>
+                <td>72h</td>
+                <td>18h</td>
+            </tr>
+            <tr>	
+                <td>anatomia radiológica</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>	
+                <td>proteção radiológica</td>
+                <td>50h</td>
+                <td>12,5h</td>
+            </tr>
+            <tr>	
+                <td>fisiologia</td>
+                <td>90h</td>
+                <td>22,5h</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="rad3-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>anatomia comparada de vertebrados</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>medicina nuclear</td>
+                <td>42h</td>
+                <td>10,5h</td>
+            </tr>
+            <tr>	
+                <td>radiologia odontológica</td> 
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>radiologia digital e pós-processamento de imagens</td>
+                <td>42h</td>
+                <td>10,5h</td>
+            </tr>
+            <tr>	
+                <td>radiologia industrial</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>radiologia convencional e mamografia</td>
+                <td>120h</td>
+                <td>30h</td>
+            </tr>
+            <tr>	
+                <td>enfermagem em radiologia</td>
+                <td>42h</td>
+                <td>10,5h</td>
+            </tr>
+            <tr>	
+                <td>gestão e legislação em radiologia</td>
+                <td>42h</td>
+                <td>10,5h</td>
+            </tr>
+            <tr>	
+                <td>radiologia contrastada</td>
+                <td>42h</td>
+                <td>10,5h</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="rad4-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>estágio em radiologia contrastada</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>	
+                <td>estágio em exames convencionais e mamografia</td>
+                <td>140h</td>
+                <td>35h</td>
+            </tr>
+            <tr>	
+                <td>inteligência artificial</td>
+                <td>36h</td>
+                <td>9h</td>
+            </tr>
+            <tr>	
+                <td>densitometria óssea</td>
+                <td>42h</td>
+                <td>10,5h</td>
+            </tr>
+            <tr>	
+                <td>radiologia intervencionista</td>
+                <td>42h</td>
+                <td>10,5h</td>
+            </tr>
+            <tr>	
+                <td>estágio em medicina nuclear</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>	
+                <td>análise quantitativa aplicada a metodologia científica para a radiologia</td>
+                <td>42h</td>
+                <td>10,5h</td>
+            </tr>
+            <tr>	
+                <td>ultrassonografia</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="rad5-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>projeto para produção intelectual</td>
+                <td>150h</td>
+                <td>37,5h</td>
+            </tr>
+            <tr>	
+                <td>ressonância magnética</td>
+                <td>100h</td>
+                <td>25h</td>
+            </tr>
+            <tr>	
+                <td>tomografia computadorizada</td>
+                <td>80h</td>
+                <td>20h</td>
+            </tr>
+            <tr>	
+                <td>estágio em ressonância magnética</td>
+                <td>120h</td>
+                <td>30h</td>
+            </tr>
+            <tr>	
+                <td>estágio em tomografia computadorizada</td>
+                <td>120h</td>
+                <td>30h</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="f-group">
+        <table id="rad6-tabela" style="display: none;">
+            <tr>
+                <th class="uc">UC</th>
+                <th>Carga</th>
+                <th>Pode Faltar (h)</th>
+            </tr>
+            <tr>
+                <td>estágio em radioterapia</td>
+                <td>40h</td>
+                <td>10h</td>
+            </tr>
+            <tr>	
+                <td>radioterapia</td>
+                <td>60h</td>
+                <td>15h</td>
+            </tr>
+            <tr>	
+                <td>trabalho de produção intelectual</td>
+                <td>350h</td>
+                <td>87,5h</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<footer> 
+    <p><b>CARGA HORÁRIA SUJEITA À ALTERAÇÃO</b></p>
+    <p> Acesse o site oficial para consulta da sua matriz curricular completa
+        <a href="https://www3.unifesp.br/prograd/app_prograd/consulta_matriz/cns_matriz/cns_matriz.php" target="_blank" title="Matriz Curricular">aqui.</a>
+    </p> 
+    
+    <p>Código da Matriz Vigente utilizada:</p>
+    <p>Informática em saúde - 00000003</p>
+    <p>Oftálmica INTEGRAL e MATUTINO - 00000001</p>
+    <p>Radiologia - 00000002</p>
+</footer>
+
+<aside>
+    <h3>Calcule quantos dias você pode faltar:</h3>
+        <label for="horasfalta">Quantas horas pode faltar?</label>
+        <input type="number" id="horasfalta">
+        <label for="dia">Quantas aulas/horas por dia?</label>
+        <input type="number" id="dia">
+        <button onclick="calcularDia()">Calcular</button>
+        <p id="resultado"></p>
+</aside>
+
+</body>
+</html>
